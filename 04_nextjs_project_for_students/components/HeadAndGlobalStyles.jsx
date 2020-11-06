@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { Component } from "react";
+import React  from "react";
 import { createGlobalStyle } from "styled-components";
 import { Normalize } from "styled-normalize";
 
@@ -66,10 +66,8 @@ const HeadAndGlobalStyles = () => {
     <>
       <Head>
         <title>Welcome to My To Do List</title>
-
         <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></link>
       </Head>
-
       <Normalize />
       <GlobalStyles />
     </>

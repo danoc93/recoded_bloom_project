@@ -56,7 +56,7 @@ const TodoList = ({ tasks }) => {
 
   const handleTaskChange = (event) => {
     setCheckedTasks({
-      ...currentTasks,
+      ...checkedTasks,
       [event.target.name]: event.target.checked,
     });
   };

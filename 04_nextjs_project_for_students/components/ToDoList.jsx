@@ -5,28 +5,8 @@ const TaskList = styled.ul`
   list-style: none;
 `;
 
-const InputLabel = styled.label`
-  display: flex;
-  align-items: center;
-  padding: 0.5em;
-  border-radius: var(--br);
-  border: 2px solid transparent;
-
-  &:hover {
-    border: 2px solid var(--main-color);
-  }
-  
-  input {
-    flex-shrink: 0;
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
-  }
-
-  span {
-    margin-top: 0.2em;
-  }
-`;
+// TODO: Use styled-components to output a styled label as per the requirements.
+// const InputLabel = ???
 
 const TodoList = ({ tasks }) => {
   const [checkedTasks, setCheckedTasks] = React.useState({});
@@ -43,7 +23,7 @@ const TodoList = ({ tasks }) => {
 
   const handleTaskChange = (event) => {
     setCheckedTasks({
-      ...currentTasks,
+      ...checkedTasks,
       [event.target.name]: event.target.checked,
     });
   };

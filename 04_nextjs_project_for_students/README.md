@@ -27,6 +27,37 @@ We also learned how [`styled-components`](https://styled-components.com/) allow 
 
 As you build up your page in the next sections, can you try to replicate the provided design by only leveraging this library?
 
+### Start with some styling
+
+If you start your application you will see a To-Do list with some items available for you to click, but without proper styling.
+
+Use styled-components to output a ```<label>``` that wraps the input and span of each of the items.
+
+To complete this task, go to `components/ToDoList.jsx` and use the following CSS:
+
+```
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  border-radius: var(--br);
+  border: 2px solid transparent;
+
+  &:hover {
+    border: 2px solid var(--main-color);
+  }
+  
+  input {
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+  }
+
+  span {
+    margin-top: 0.2em;
+  }
+```
+
 ### Start by adding a new route with static content
 
 In Next.js routes can be easily added by creating a new page under the `/pages` folder.

@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import Layout, {Constraint} from "./Layout";
 
 const NavWrapper = styled.nav`
   position: fixed;
@@ -25,11 +24,13 @@ const NavItem = styled.li`
   margin-right: 1em;
 
   a {
-    text-decoration: ${props => (props.active ? 'underline' : 'none')};
+    // TODO: Use dynamic properties to highlight if its active.
+    text-decoration: none;
     font-weight: bold;
   }
 `;
 
+//TODO: Add a link to your new about-me page
 const Navbar = () => {
   const pathName = process.browser ? window.location.pathname : null;
 
@@ -39,11 +40,6 @@ const Navbar = () => {
         <NavItem active={pathName === "/"}>
           <Link href="/">
             <a>My To Do List</a>
-          </Link>
-        </NavItem>
-        <NavItem active={pathName === "/about-me"}>
-          <Link href="/about-me">
-            <a>About Me</a>
           </Link>
         </NavItem>
       </NavConstraint>
