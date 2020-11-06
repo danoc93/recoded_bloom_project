@@ -2,19 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
+const myItems = [
+  {
+    id: 1,
+    label: 'History of JavaScript frameworks'
+  },
+  {
+    id: 2,
+    label: 'Learning Styled Components'
+  }
+];
 
-const StyledNormalParagraph = styled.p`
+const MyParagraph = styled.p`
   text-align: center;
-`;
-
-const StyledSpecialParagraph = styled(StyledNormalParagraph)`
-  font-weight: bold;
+  font-weight: ${props => props.emphasize ? 'bold' : 'normal'};
 `;
 
 const MyApplication =  () => <div>
-  <StyledNormalParagraph>
-    Hello, this is my to-do list.
-  </StyledNormalParagraph>
+  <MyParagraph>
+    This is my To-Do list
+  </MyParagraph>
+  <MyParagraph emphasize={true}>
+    Re:Coded is great!
+  </MyParagraph>
 </div>;
 
 ReactDOM.render(
