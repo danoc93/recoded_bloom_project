@@ -1,6 +1,5 @@
 import { getCheckedTasks } from "../../services/taskService";
 
 export default (req, res) => {
-  res.statusCode = 200;
-  res.json({ checkedTasks: getCheckedTasks() });
+  //TODO: Use getCheckedTasks to return a JSON object with your checked items.
 };

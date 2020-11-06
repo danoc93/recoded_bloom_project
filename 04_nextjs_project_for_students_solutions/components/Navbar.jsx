@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import Layout, {Constraint} from "./Layout";
 
 const NavWrapper = styled.nav`
   position: fixed;

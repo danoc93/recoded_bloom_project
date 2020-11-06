@@ -11,8 +11,8 @@ const TaskList = styled.ul`
 const TodoList = ({ tasks }) => {
   const [checkedTasks, setCheckedTasks] = React.useState({});
 
-  if (!tasks) {
-    return;
+  if (!tasks || tasks.length === 0) {
+    return <p>Your list is empty :(</p>;
   }
 
   // Fetch the actual selection states from the API.
@@ -36,7 +36,8 @@ const TodoList = ({ tasks }) => {
           <label>
             <input
               type="checkbox"
-              checked={checkedTasks[task.id] || false}
+              name={task.id}
+              checked={checkedTasks[task.id] ?? false}
               onChange={handleTaskChange}
             />
 

@@ -6,8 +6,7 @@ import Navbar from "../components/Navbar";
 
 const FavoriteImage = styled.img`
   max-width: 100%;
-  //TODO: Set the border radius to the 'br' CSS variable in the GlobalStyle component.
-  border-radius: 1px;
+  border-radius: var(--br);
 `;
 
 const AboutMe = (props) => {
@@ -19,15 +18,31 @@ const AboutMe = (props) => {
         <Navbar />
 
         <main>
-          {'TODO: Create components for the rest of your personal information!'}
-          <FavoriteImage src={props.image} alt="My favourite picture" />>
+          <h1>About Me</h1>
+
+          <p>
+            {`Hello! My name is ${props.name}, I am ${props.age} and I live in ${props.city}!`}
+          </p>
+
+          <p>Here is an image of my favourite place in the world</p>
+
+          <FavoriteImage src={props.image} alt="My favourite picture" />
         </main>
       </Layout>
     </>
   );
 }
 
-// TODO: Change this to return your personal details!
-export const getStaticProps = async (query, res, req) => {};
+export const getStaticProps = async (query, res, req) => {
+  return {
+    props: {
+      name: "Re:Coded Student",
+      age: 27,
+      city: "London",
+      image:
+        "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ihUlvkMnBc6A/v0/-1x-1.jpg",
+    },
+  };
+};
 
 export default AboutMe;

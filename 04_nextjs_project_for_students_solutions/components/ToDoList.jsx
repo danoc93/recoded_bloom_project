@@ -3,10 +3,7 @@ import styled from "styled-components";
 
 const TaskList = styled.ul`
   list-style: none;
-
-  li {
-  }
-`
+`;
 
 const InputLabel = styled.label`
   display: flex;
@@ -29,20 +26,20 @@ const InputLabel = styled.label`
   span {
     margin-top: 0.2em;
   }
-`
+`;
 
 const TodoList = ({ tasks }) => {
   const [checkedTasks, setCheckedTasks] = React.useState({});
 
-  if (!tasks) {
-    return;
+  if (!tasks || tasks.length === 0) {
+    return <p>Your list is empty :(</p>;
   }
 
   // Fetch the actual selection states from the API.
   // Because of the second parameter, this effect will only be performed once.
   React.useEffect(() => {
     const fetcher = async () => {
-      const response = await await (
+      const response = await (
         await fetch("/api/get_selected_tasks")
       ).json();
       const initialTasks = {};
@@ -69,7 +66,8 @@ const TodoList = ({ tasks }) => {
           <InputLabel>
             <input
               type="checkbox"
-              checked={checkedTasks[task.id] || false}
+              name={task.id}
+              checked={checkedTasks[task.id] ?? false}
               onChange={handleTaskChange}
             />
 

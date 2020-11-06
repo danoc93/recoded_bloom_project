@@ -1,36 +1,35 @@
-import React, { Component } from "react";
+import React  from "react";
 import TodoList from "../components/ToDoList";
 import Navbar from "../components/Navbar";
-import { getAvailableTasks } from "../services/taskService";
-import styled from "styled-components";
 import HeadAndGlobalStyles from "../components/HeadAndGlobalStyles";
 import Layout from "../components/Layout";
-
+import {getAvailableTasks} from '../services/taskService';
 
 const MyTodoList = (props) => {
   return (
-    <>
-      <HeadAndGlobalStyles />
-      
-      <Layout>
-        <Navbar />
-        
-        <main>
-          <h1>My To Do List</h1>
+      <>
+        <HeadAndGlobalStyles />
 
-          <TodoList tasks={props.tasks} />
-        </main>
-      </Layout>
-    </>
+        <Layout>
+          <Navbar />
+
+          <main>
+            <h1>My To Do List</h1>
+
+            <TodoList tasks={props.tasks} />
+          </main>
+        </Layout>
+      </>
   );
 }
 
-export const getServerSideProps = async (query, res, req) => {
+// TODO: Use getAvailableTasks to return the list of all items we want to pre-fetch.
+export const getServerSideProps = async () => {
   return {
     props: {
-      tasks: getAvailableTasks(),
-    },
-  };
+
+    }
+  }
 };
 
 export default MyTodoList;
