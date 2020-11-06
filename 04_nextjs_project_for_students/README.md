@@ -14,6 +14,11 @@ You want to build a nicer To Do list, in this folder you can find a couple scree
 
 The goal is to have two routes: `/` and `/about-me`, that will be rendered differently!
 
+![To Do List](https://raw.github.com/danoc93/recoded_bloom_project/master/04_nextjs_project_for_students/solution1.png "To Do List")
+
+![About Me Page](https://raw.github.com/danoc93/recoded_bloom_project/master/04_nextjs_project_for_students/solution2.png "About Me Page")
+
+
 ### A bit about styling
 
 You can see that the wireframes show different positions for the content, as well as different colours and sizes.
