@@ -3,9 +3,6 @@ import styled from "styled-components";
 
 const TaskList = styled.ul`
   list-style: none;
-
-  li {
-  }
 `
 
 const InputLabel = styled.label`
