@@ -13,11 +13,8 @@ const StyledSpecialParagraph = styled(StyledNormalParagraph)`
 
 const MyApplication =  () => <div>
   <StyledNormalParagraph>
-    Hello, I am regular paragraph styled with basic CSS.
+    Hello, this is my to-do list.
   </StyledNormalParagraph>
-  <StyledSpecialParagraph>
-    Hello, I another paragraph styled differently.
-  </StyledSpecialParagraph>
 </div>;
 
 ReactDOM.render(

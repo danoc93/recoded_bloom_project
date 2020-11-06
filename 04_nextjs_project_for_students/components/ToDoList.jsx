@@ -3,10 +3,7 @@ import styled from "styled-components";
 
 const TaskList = styled.ul`
   list-style: none;
-
-  li {
-  }
-`
+`;
 
 const InputLabel = styled.label`
   display: flex;
@@ -29,7 +26,7 @@ const InputLabel = styled.label`
   span {
     margin-top: 0.2em;
   }
-`
+`;
 
 const TodoList = ({ tasks }) => {
   const [checkedTasks, setCheckedTasks] = React.useState({});
@@ -41,17 +38,7 @@ const TodoList = ({ tasks }) => {
   // Fetch the actual selection states from the API.
   // Because of the second parameter, this effect will only be performed once.
   React.useEffect(() => {
-    const fetcher = async () => {
-      const response = await await (
-        await fetch("/api/get_selected_tasks")
-      ).json();
-      const initialTasks = {};
-      for (const task of response.checkedTasks) {
-        initialTasks[task] = true;
-      }
-      setCheckedTasks(initialTasks);
-    };
-    fetcher();
+    //TODO: Write some code to fetch the list of selected items and update checkedTasks.
   }, []);
 
   const handleTaskChange = (event) => {
@@ -66,7 +53,7 @@ const TodoList = ({ tasks }) => {
       <TaskList>
         {tasks.map((task) => (
           <li key={task.id}>
-          <InputLabel>
+          <label>
             <input
               type="checkbox"
               checked={checkedTasks[task.id] || false}
@@ -74,7 +61,7 @@ const TodoList = ({ tasks }) => {
             />
 
             <span>{task.label}</span>
-          </InputLabel>
+          </label>
 
           </li>
         ))}
