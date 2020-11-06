@@ -1,1 +1,3 @@
-# A simple version of this application with styling via regular CSS.
+# Demonstration: Using styled-components
+
+This is the starter code we will use to create a To-Do list using styled-components as the building blocks.
