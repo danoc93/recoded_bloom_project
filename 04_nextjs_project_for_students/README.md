@@ -109,7 +109,7 @@ Can you add a Link to your new About Me page?
 
 In Navbar.jsx, underline the `<a>` tag when the parent `<NavItem>`'s `active` prop is `true`.
 
-> Hint: Look at [Link](https://styled-components.com/docs/basics#adapting-based-on-props).
+> Hint: Look at [Adapting based on props](https://styled-components.com/docs/basics#adapting-based-on-props).
 
 ## Final result
 
