@@ -105,6 +105,12 @@ Can you add a Link to your new About Me page?
 
 > Hint: Look at [Link](https://nextjs.org/docs/api-reference/next/link).
 
+### Underline NavItem in the Navbar when it's selected
+
+In Navbar.jsx, underline the `<a>` tag when the parent `<NavItem>`'s `active` prop is `true`.
+
+> Hint: Look at [Link](https://styled-components.com/docs/basics#adapting-based-on-props).
+
 ## Final result
 
 You should now have a small application, with two routes, one pre-rendered on the server at runtime, and one pre-rendered statically at build time.
