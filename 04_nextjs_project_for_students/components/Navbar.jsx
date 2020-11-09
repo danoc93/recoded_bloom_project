@@ -13,7 +13,7 @@ const NavWrapper = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const NavConstraint = styled.ul`
   display: flex;
@@ -32,7 +32,11 @@ const NavItem = styled.li`
 
 //TODO: Add a link to your new about-me page
 const Navbar = () => {
-  const pathName = process.browser ? window.location.pathname : null;
+  const [currentPath, setCurrentPath] = React.useState(null);
+
+  React.useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
 
   return (
     <NavWrapper>
