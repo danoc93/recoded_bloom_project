@@ -13,7 +13,7 @@ const NavWrapper = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const NavConstraint = styled.ul`
   display: flex;
@@ -24,23 +24,27 @@ const NavItem = styled.li`
   margin-right: 1em;
 
   a {
-    text-decoration: ${props => (props.active ? 'underline' : 'none')};
+    text-decoration: ${(props) => (props.active ? "underline" : "none")};
     font-weight: bold;
   }
 `;
 
 const Navbar = () => {
-  const pathName = process.browser ? window.location.pathname : null;
+  const [currentPath, setCurrentPath] = React.useState(null);
+
+  React.useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
 
   return (
     <NavWrapper>
       <NavConstraint>
-        <NavItem active={pathName === "/"}>
+        <NavItem active={currentPath === "/"}>
           <Link href="/">
             <a>My To Do List</a>
           </Link>
         </NavItem>
-        <NavItem active={pathName === "/about-me"}>
+        <NavItem active={currentPath === "/about-me"}>
           <Link href="/about-me">
             <a>About Me</a>
           </Link>
