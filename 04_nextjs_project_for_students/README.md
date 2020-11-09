@@ -18,7 +18,6 @@ The goal is to have two routes: `/` and `/about-me`, that will be rendered diffe
 
 ![About Me Page](https://raw.github.com/danoc93/recoded_bloom_project/master/04_nextjs_project_for_students/solution2.png "About Me Page")
 
-
 ### A bit about styling
 
 You can see that the wireframes show different positions for the content, as well as different colours and sizes.
@@ -31,7 +30,7 @@ As you build up your page in the next sections, can you try to replicate the pro
 
 If you start your application you will see a To-Do list with some items available for you to click, but without proper styling.
 
-Use styled-components to output a ```<label>``` that wraps the input and span of each of the items.
+Use styled-components to output a `<label>` that wraps the input and span of each of the items.
 
 To complete this task, go to `components/ToDoList.jsx` and use the following CSS:
 
@@ -45,7 +44,7 @@ To complete this task, go to `components/ToDoList.jsx` and use the following CSS
   &:hover {
     border: 2px solid var(--main-color);
   }
-  
+
   input {
     flex-shrink: 0;
     width: 1em;
@@ -76,7 +75,7 @@ One of the great benefits of Next.js is that you can pre-fetch data and this can
 
 In Next.js you have the ability to leverage the server to fetch data without exposing data sources to the browser.
 
-Under `/` we want the ability to see a To Do list. 
+Under `/` we want the ability to see a To Do list.
 
 We want to fetch the list of available options on the server, and finally pass the pre-rendered list to the client.
 
@@ -85,7 +84,7 @@ We want to fetch the list of available options on the server, and finally pass t
 ### Create an API endpoint that will provide a list of checked items
 
 Next.js allows you to expose simple [API](https://nextjs.org/docs/api-routes/introduction) endpoints that do not get rendered as pages. This is quite useful because you don't always want to have an external API server.
- 
+
 There is an example call `/ping` already provided for you.
 
 Create a new `get_selected_tasks` endpoint, that when called, gives you a list of checked items for your To Do list.

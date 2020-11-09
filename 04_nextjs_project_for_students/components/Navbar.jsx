@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <NavWrapper>
       <NavConstraint>
-        <NavItem active={pathName === "/"}>
+        <NavItem active={currentPath === "/"}>
           <Link href="/">
             <a>My To Do List</a>
           </Link>
