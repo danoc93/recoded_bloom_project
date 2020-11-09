@@ -5,15 +5,14 @@ import { getAvailableTasks } from "../services/taskService";
 import HeadAndGlobalStyles from "../components/HeadAndGlobalStyles";
 import Layout from "../components/Layout";
 
-
 const MyTodoList = (props) => {
   return (
     <>
       <HeadAndGlobalStyles />
-      
+
       <Layout>
         <Navbar />
-        
+
         <main>
           <h1>My To Do List</h1>
 
@@ -22,7 +21,7 @@ const MyTodoList = (props) => {
       </Layout>
     </>
   );
-}
+};
 
 export const getServerSideProps = async () => {
   return {
