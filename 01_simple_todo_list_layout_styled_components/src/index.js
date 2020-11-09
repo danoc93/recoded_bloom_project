@@ -1,33 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import styled from 'styled-components';
+import React from "react";
+import ReactDOM from "react-dom";
 
-const myItems = [
-  {
-    id: 1,
-    label: 'History of JavaScript frameworks'
-  },
-  {
-    id: 2,
-    label: 'Learning Styled Components'
-  }
-];
+const MyApplication = () => (
+  <>
+    <h1>My To-do List</h1>
+    <h2>Re:Coded</h2>
+    <h2 className="emphasis">Nov 09 – Nov 13</h2>
 
-const MyParagraph = styled.p`
-  text-align: center;
-  font-weight: ${props => props.emphasize ? 'bold' : 'normal'};
-`;
-
-const MyApplication =  () => <div>
-  <MyParagraph>
-    This is my To-Do list
-  </MyParagraph>
-  <MyParagraph emphasize={true}>
-    Re:Coded is great!
-  </MyParagraph>
-</div>;
-
-ReactDOM.render(
-  <MyApplication/>,
-  document.getElementById('root')
+    <ul>
+      <li>
+        <label>
+          <input type="checkbox" />
+          <span>Task 1</span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" />
+          <span>Task 2</span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" />
+          <span>Task 3</span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" />
+          <span>Task 4</span>
+        </label>
+      </li>
+    </ul>
+  </>
 );
+
+ReactDOM.render(<MyApplication />, document.getElementById("root"));
